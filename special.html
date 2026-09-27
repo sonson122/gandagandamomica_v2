@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message</title>
+    <link rel="stylesheet" href="special.css">
+    <!-- Font Awesome for Player Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Audio Player Section -->
+        <div class="player-card">
+            <div class="album-art">
+                <img src="pic.jpg" alt="Album Cover" id="cover-art">
+            </div>
+            
+            <div class="song-details">
+                <h2 id="song-title">Hindi ako Mawawala</h2>
+                <p id="artist-name">by: El Manu</p>
+            </div>
+
+            <!-- Hidden Audio Element -->
+            <audio id="audio-player" src="music.mp3"></audio>
+
+            <!-- Seek Bar / Progress Bar -->
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <input type="range" id="seek-bar" value="0" min="0" step="0.1">
+                <span id="duration">0:00</span>
+            </div>
+
+            <!-- Player Controls -->
+            <div class="controls">
+                <button id="prev-btn" class="ctrl-btn"><i class="fas fa-backward"></i></button>
+                <button id="play-btn" class="ctrl-btn main-btn"><i class="fas fa-play"></i></button>
+                <button id="next-btn" class="ctrl-btn"><i class="fas fa-forward"></i></button>
+            </div>
+
+            <!-- Volume Control -->
+            <div class="volume-container">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" id="volume-bar" value="1" min="0" max="1" step="0.05">
+            </div>
+        </div>
+
+       <!-- Message/Narration Section -->
+        <div class="narration-card">
+            <h3>Special Message</h3>
+            <div class="message-content">
+                <p>Today, I saw your TikTok post about how lucky you feel to have me on how much you appreciate the way I treat you, care for you, and stay gentle with you.</p>
+                <p>To be completely honest, I didn't expect you to share something so sweet. While writing this, I was honestly left speechless and didn't even know where to start.</p>
+                <p>If you only knew how grateful I am to have you in my life and how happy you make me every single day. You give me so much inspiration to chase my dreams, and you are part of everything I work toward.</p>
+                <p>You may never know how much I cherish your presence, or how proud and glad I am to call you my baby.</p>
+                <p>I also want to say sorry if I get a bit makulit or persistent when offering help or giving you things. That is just my favorite way of showing you how much you mean to me.</p>
+                <p>So please, baby, never hesitate to come to me, whether you want to rant, vent, complain, or just share your day. I am always right here for you, no matter what. <3</p>
+            </div>
+            <a href="index.html" class="back-link">← Back to Main Page</a>
+        </div>
+    </div>
+
+    <script src="special.js"></script>
+</body>
+</html>

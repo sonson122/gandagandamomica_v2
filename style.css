@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+body {
+    background: radial-gradient(circle at 50% 35%, #fff, transparent 48%), #e9e2da;
+    color: #37312e;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    touch-action: none
+}
+
+.shell {
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 4vw 7vh
+}
+
+.book {
+    width: min(92vw, 480px);
+    height: min(88dvh, 760px);
+    position: relative;
+    perspective: 1800px;
+    filter: drop-shadow(0 22px 35px rgba(55, 42, 35, .24))
+}
+
+.page {
+    position: absolute;
+    inset: 0;
+    transform-origin: left center;
+    transition: transform .82s cubic-bezier(.2, .7, .16, 1);
+    transform-style: preserve-3d;
+    z-index: 1;
+    border-radius: 2px 7px 7px 2px;
+    overflow: hidden
+}
+
+.page.flipped {
+    transform: rotateY(-180deg)
+}
+
+.paper {
+    position: absolute;
+    inset: 0;
+    padding: 12% 10% 11%;
+    background: linear-gradient(90deg, rgba(80, 60, 50, .075), transparent 6%, transparent 96%, rgba(80, 60, 50, .035)), repeating-linear-gradient(0deg, rgba(100, 80, 70, .012) 0, rgba(100, 80, 70, .012) 1px, transparent 1px, transparent 4px), #fcfaf6;
+    border: 1px solid #dcd1c7;
+    box-shadow: inset 8px 0 15px rgba(75, 57, 47, .035);
+    overflow: auto
+}
+
+.paper:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    background: linear-gradient(90deg, rgba(48, 37, 31, .1), transparent);
+    pointer-events: none
+}
+
+.label {
+    font: 700 9px Arial, sans-serif;
+    letter-spacing: .22em;
+    color: #91837b;
+    display: block;
+    margin-bottom: 20px
+}
+
+h1 {
+    font-size: 62px;
+    line-height: .78;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -.04em
+}
+
+h2 {
+    font-size: clamp(38px, 10vw, 58px);
+    line-height: .9;
+    margin: 0 0 25px;
+    font-weight: 600;
+    letter-spacing: -.025em
+}
+
+h3 {
+    font-size: 25px;
+    margin: 18px 0 7px
+}
+
+p {
+    font-size: clamp(18px, 4.7vw, 22px);
+    line-height: 1.45;
+    margin: 0 0 16px
+}
+
+blockquote {
+    border-left: 2px solid #c3aaa1;
+    padding: 9px 0 9px 18px;
+    font-size: 22px;
+    font-style: italic;
+    color: #655853;
+    margin: 20px 0
+}
+
+.num {
+    position: absolute;
+    bottom: 18px;
+    right: 25px;
+    font: 10px Arial, sans-serif;
+    color: #a69b94
+}
+
+.bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font: 9px Arial, sans-serif;
+    letter-spacing: .1em;
+    color: #aaa09a
+}
+
+.toc p {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid #e4dad2;
+    margin: 0;
+    font-size: 18px
+}
+
+.toc b {
+    font: 10px Arial, sans-serif;
+    color: #a2968f
+}
+
+.cover .paper {
+    padding: 0;
+    background: #f2ebe4;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.photo {
+    width: 72%;
+    height: 42%;
+    margin-top: 9%;
+    border: 7px solid #fffdf9;
+    box-shadow: 0 8px 22px rgba(60, 45, 37, .16);
+    background: #ded5ce;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.photo span {
+    position: absolute;
+    font: 10px Arial, sans-serif;
+    letter-spacing: .15em;
+    color: #9b8d85
+}
+
+.title {
+    text-align: center;
+    margin-top: 9%;
+    position: relative;
+    z-index: 2
+}
+
+.title small {
+    font: 9px Arial, sans-serif;
+    letter-spacing: .24em;
+    color: #8e7f77
+}
+
+.title i {
+    display: block;
+    width: 70px;
+    height: 1px;
+    background: #b9a69d;
+    margin: 16px auto
+}
+
+.title p {
+    font-size: 16px;
+    letter-spacing: .12em;
+    color: #796b64
+}
+
+.tulips {
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 30px;
+    filter: grayscale(1);
+    opacity: .7
+}
+
+.ending {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center
+}
+
+.ending .label {
+    text-align: center
+}
+
+.big {
+    font-size: clamp(28px, 7vw, 39px);
+    font-style: italic;
+    margin: 25px 0;
+    color: #62534e
+}
+
+.cliff {
+    font-size: 24px;
+    font-style: italic
+}
+
+.counter {
+    position: fixed;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+    font: 10px Arial, sans-serif;
+    letter-spacing: .12em;
+    color: #8d817a;
+    z-index: 20
+}
+
+#hint {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font: 9px Arial, sans-serif;
+    letter-spacing: .12em;
+    color: #9b8e87;
+    opacity: .8;
+    z-index: 20
+}
+
+@media(max-height:620px) {
+    .shell {
+        padding: 2vh 4vw 6vh
+    }
+
+    .book {
+        height: 90dvh
+    }
+
+    .paper {
+        padding-top: 7%;
+        padding-bottom: 7%
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.32;
+        margin-bottom: 10px
+    }
+
+    h2 {
+        font-size: 38px;
+        margin-bottom: 14px
+    }
+
+    .photo {
+        height: 38%;
+        margin-top: 5%
+    }
+
+    .title {
+        margin-top: 5%
+    }
+}
